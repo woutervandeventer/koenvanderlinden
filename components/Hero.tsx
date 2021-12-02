@@ -34,11 +34,11 @@ const Hero = () => {
   return (
     <Container className={styles.hero} id="hero">
       <h1>
-        I'm <span className={styles.koen}>Koen</span>, a jazz piano and trumpet
-        player based in The Hague.
+        I&apos;m <span className={styles.koen}>Koen</span>, a jazz piano and
+        trumpet player based in The Hague.
       </h1>
       <p>
-        If you want to know what I'm doing, feel free to sign up for my
+        If you want to know what I&apos;m doing, feel free to sign up for my
         newsletter.
       </p>
       <Form

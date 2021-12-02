@@ -12,9 +12,9 @@ const About = () => {
       <p>
         Koen van der Linden is a Dutch jazz piano player and singer. He grew up
         in the Hague where he started playing piano at the age of ten and at the
-        age of sixteen he discovered the city's vibrant jazz scene, after which
-        he decided he wanted to dedicate his life fully to music. Two years
-        later he got admitted to the Royal Conservatory of The Hague.
+        age of sixteen he discovered the city&apos;s vibrant jazz scene, after
+        which he decided he wanted to dedicate his life fully to music. Two
+        years later he got admitted to the Royal Conservatory of The Hague.
       </p>
       <div className={`${containerStyles.full_width} ${styles.image}`}>
         <Image
