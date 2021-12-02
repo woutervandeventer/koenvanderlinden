@@ -1,0 +1,161 @@
+@use '../constants' as *;
+
+.header {
+  background-color: c(light);
+
+  @include media(m) {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.logo {
+  display: none;
+  padding: 1em;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    transform: scale(102%);
+    outline: s(xxs) solid c(accent);
+    outline-offset: s(s) * -1;
+    border-radius: 1em;
+  }
+
+  svg {
+    height: s(xxl);
+    width: auto;
+
+    path {
+      fill: c(dark);
+    }
+  }
+
+  @include media(m) {
+    display: inline-block;
+  }
+}
+
+.burger {
+  position: fixed;
+  z-index: 99999;
+  top: 1em;
+  right: 1em;
+  height: 4em;
+  width: 4em;
+  display: flex;
+  font-size: inherit;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(c(dark), 0.5);
+
+  @include media(m) {
+    display: none;
+  }
+
+  div {
+    position: relative;
+    margin: auto;
+  }
+
+  div,
+  div::before,
+  div::after {
+    height: 0.25em;
+    width: 2.5em;
+    background-color: c(light);
+    border-radius: 0.5em;
+    transition: all 250ms ease-in-out;
+  }
+
+  div::before {
+    position: absolute;
+    content: '';
+    transform: translate(-50%, -0.75em);
+  }
+
+  div::after {
+    position: absolute;
+    content: '';
+    transform: translate(-50%, 0.75em);
+  }
+
+  &.open {
+    div,
+    div::before,
+    div::after {
+      background-color: c(light);
+    }
+
+    div {
+      background-color: rgba(black, 0);
+    }
+
+    div::before {
+      transform: translate(-50%, 0) rotate(-45deg);
+    }
+
+    div::after {
+      transform: translate(-50%, 0) rotate(45deg);
+    }
+  }
+}
+
+.links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: c(dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-out;
+  touch-action: none;
+
+  &.open {
+    transform: translateY(0);
+  }
+
+  a {
+    @include font-size(l);
+    font-weight: 600;
+    padding: 1em;
+    text-transform: lowercase;
+    color: c(light);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: c(accent);
+    }
+  }
+
+  @include media(m) {
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    transform: translateY(0);
+
+    a {
+      color: c(dark);
+    }
+  }
+}

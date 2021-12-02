@@ -1,0 +1,46 @@
+@use '../constants' as *;
+
+.gig {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'date info'
+    'date location';
+
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  > * {
+    padding: 1em;
+  }
+}
+
+.date {
+  grid-area: date;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: mix(c(accent), white, 50%);
+  color: c(dark);
+  font-weight: 600;
+}
+
+.day {
+  @include font-size(xl);
+  font-weight: 800;
+}
+
+.info {
+  grid-area: info;
+  font-weight: 600;
+  background-color: c(dark);
+}
+
+.location {
+  grid-area: location;
+  background-color: c(light);
+  color: c(dark);
+}

@@ -1,0 +1,6 @@
+@use '../constants' as *;
+
+.message {
+  @include font-size(l);
+  text-align: center;
+}

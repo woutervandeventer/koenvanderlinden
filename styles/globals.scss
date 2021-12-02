@@ -1,0 +1,30 @@
+@use './fonts.scss';
+@use './constants.scss' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @include media(m) {
+    scroll-padding-top: s(xxl) + 2em;
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  @include font-size(m);
+  color: c(light);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+p {
+  line-height: 1.6;
+}

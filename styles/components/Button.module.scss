@@ -1,0 +1,22 @@
+@use '../constants' as *;
+
+.button {
+  font-family: inherit;
+  @include font-size(m);
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  border-radius: s(xxs);
+  border: none;
+  padding: s(m) s(xl);
+  background-color: mix(c(accent), white, 50%);
+  color: c(dark);
+  transition: all 250ms linear;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  &:hover,
+  &:focus-visible {
+    background-color: c(accent);
+    color: c(light);
+  }
+}

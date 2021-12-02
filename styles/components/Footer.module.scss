@@ -1,0 +1,14 @@
+@use '../constants' as *;
+
+.footer {
+  text-align: center;
+  padding: s(l);
+
+  a {
+    color: inherit;
+  }
+
+  @include media(m) {
+    padding: s(xl);
+  }
+}

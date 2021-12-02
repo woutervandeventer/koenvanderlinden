@@ -1,0 +1,26 @@
+@use '../constants' as *;
+
+.section {
+  display: grid;
+  grid-template-columns: minmax(5%, 1fr) minmax(min-content, 61ch) minmax(
+      5%,
+      1fr
+    );
+
+  & > * {
+    grid-column: 2 / -2;
+    margin-top: s(l);
+
+    @include media(m) {
+      margin-top: s(xl);
+    }
+
+    &.full_width {
+      grid-column: 1 / -1;
+
+      @include media(m) {
+        grid-column: 2 / -2;
+      }
+    }
+  }
+}

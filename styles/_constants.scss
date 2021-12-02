@@ -1,0 +1,49 @@
+@use 'sass:math';
+@use 'sass:map';
+
+$base: 1;
+$ratio: 1.618;
+
+$modular-scale: (
+  'xxxs': $base * math.pow($ratio, -4),
+  'xxs': $base * math.pow($ratio, -3),
+  'xs': $base * math.pow($ratio, -2),
+  's': $base * math.pow($ratio, -1),
+  'm': $base,
+  'l': $base * $ratio,
+  'xl': $base * math.pow($ratio, 2),
+  'xxl': $base * math.pow($ratio, 3),
+  'xxxl': $base * math.pow($ratio, 4)
+);
+
+$colors: (
+  'dark': #33312e,
+  'light': #fffff3,
+  'accent': #ff9f1c
+);
+
+$media: (
+  'm': 850px
+);
+
+@mixin media($size) {
+  $value: map.get($media, $size);
+  @media (min-width: $value) {
+    @content;
+  }
+}
+
+@mixin font-size($size) {
+  $scaled: map.get($modular-scale, $size);
+  font-size: $scaled;
+  font-size: clamp($scaled * 1rem, $scaled * 1.25vw, $scaled * 1.25rem);
+}
+
+@function s($size) {
+  $scaled: map.get($modular-scale, $size);
+  @return $scaled * 1em;
+}
+
+@function c($color) {
+  @return map.get($colors, $color);
+}

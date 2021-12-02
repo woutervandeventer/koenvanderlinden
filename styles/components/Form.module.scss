@@ -1,0 +1,55 @@
+@use '../constants' as *;
+
+.form {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(c(dark), 0.8);
+  padding: s(l);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  & > * + * {
+    margin-top: s(l);
+  }
+
+  label {
+    text-transform: lowercase;
+    @include font-size(l);
+    font-weight: 300;
+  }
+
+  textarea,
+  input {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 0.25em;
+    background-color: c(light);
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.success {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  @include font-size(l);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: c(dark);
+  padding: 1em;
+  text-align: center;
+}

@@ -1,0 +1,7 @@
+@use '../constants' as *;
+
+.h2 {
+  @include font-size(xl);
+  font-weight: 800;
+  text-align: center;
+}
