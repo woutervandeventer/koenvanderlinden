@@ -5,14 +5,16 @@ import styles from '../styles/components/Background.module.scss'
 const Background = () => {
   return (
     <div className={styles.background_container}>
-      <Image
-        src={background}
-        alt="Koen van der Linden at the piano"
-        objectFit="cover"
-        objectPosition="center"
-        layout="fill"
-        priority={true}
-      />
+      <div className={styles.image_container}>
+        <Image
+          src={background}
+          alt="Koen van der Linden at the piano"
+          objectFit="cover"
+          objectPosition="center"
+          layout="fill"
+          priority={true}
+        />
+      </div>
       <div className={styles.overlay}></div>
     </div>
   )

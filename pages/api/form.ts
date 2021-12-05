@@ -1,7 +1,7 @@
 import sgMail from '@sendgrid/mail'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handler(
+export default async function formHandler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
