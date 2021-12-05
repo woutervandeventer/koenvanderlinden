@@ -29,7 +29,7 @@ export default async function formHandler(
       )}</p><p>Antwoorden: ${email}</p>`
 
   const msg = {
-    to: 'woutervdeventer@gmail.com', // TODO: change to email Koen
+    to: 'koen767@hotmail.com',
     from: 'info@koenvanderlinden.com',
     subject,
     text,
