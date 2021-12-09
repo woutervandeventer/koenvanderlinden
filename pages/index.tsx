@@ -13,9 +13,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
+        <title>Koen van der Linden</title>
         <meta
           name="description"
-          content="Koen van der Linden is a Dutch jazz musician."
+          content="Koen van der Linden is a jazz musician and composer based in the Netherlands, playing the piano, trumpet and singing. "
           key="description"
         />
       </Head>

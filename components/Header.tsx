@@ -12,7 +12,7 @@ const Header = () => {
           className={styles.logo}
           onClick={() => {
             const section = document.querySelector(`#hero`)
-            section?.scrollIntoView()
+            section?.scrollIntoView({ behavior: 'smooth' })
             setOpen(false)
           }}
         >
@@ -36,6 +36,7 @@ const Header = () => {
         <button
           className={`${styles.burger} ${open && styles.open}`}
           onClick={() => setOpen(!open)}
+          aria-label="Open and close navigation menu"
         >
           <div></div>
         </button>

@@ -10,10 +10,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
-
   @include media(m) {
-    scroll-padding-top: s(xxl) + 2em;
+    scroll-padding-top: 5em;
   }
 }
 

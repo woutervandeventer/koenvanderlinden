@@ -9,7 +9,7 @@ interface Props {
 const NavLink = ({ scrollTo, children, setOpen }: Props) => {
   const handleClick = () => {
     const section = document.querySelector(`#${scrollTo}`)
-    section?.scrollIntoView()
+    section?.scrollIntoView({ behavior: 'smooth' })
     setOpen(false)
   }
 
